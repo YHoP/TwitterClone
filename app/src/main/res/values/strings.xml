@@ -6,4 +6,5 @@
     <string name="timezone">PST</string>
     <string name="formatted_time">EEEE, MMMM d \'at\' h:mm</string>
     <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_tweet">TweetActivity</string>
 </resources>

@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="com.epicodus.twitterclone.ui.TweetActivity"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is a 140 character tweet used to test the dimensions of my Text View box. Here are 50 extra characters used as a placeholder for tests!"
+        android:id="@+id/tweetContentLabel"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:padding="8dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/tweetUserLabel"
+        android:enabled="true"
+        android:background="#8038a8e5"
+        android:text="By: so and so"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:padding="5dp"
+        android:layout_below="@+id/tweetContentLabel"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Wednesday, October 30th at 12:00PM"
+        android:id="@+id/tweetDateLabel"
+        android:background="#8099cc00"
+        android:textColor="@android:color/black"
+        android:padding="5dp"
+        android:layout_below="@+id/tweetUserLabel"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

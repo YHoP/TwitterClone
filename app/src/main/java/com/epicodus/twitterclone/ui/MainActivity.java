@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.epicodus.twitterclone.R;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 public class MainActivity extends ListActivity {
 
     public static String TAG = MainActivity.class.getSimpleName();
+    public static final String TWEET = "Tweet";
 
     private SharedPreferences mPreferences;
     private User mUser;
@@ -92,4 +94,17 @@ public class MainActivity extends ListActivity {
         Toast.makeText(this, "Welcome " + mUser.getName(), Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        Tweet thisTweet = (Tweet) mAdapter.getItem(position);
+        Bundle bundle = new Bundle();
+        bundle.putString("content", thisTweet.getContent());
+        bundle.putString("user", thisTweet.getUser().getName());
+        bundle.putLong("createdat", thisTweet.getCreatedAt());
+
+        Intent intent = new Intent(this, TweetActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
 }
