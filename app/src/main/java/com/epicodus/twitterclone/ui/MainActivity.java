@@ -29,7 +29,7 @@ public class MainActivity extends ListActivity {
     private EditText mTweetText;
     private Button mSubmitButton;
     private ArrayList mTweets;
-    private TweetAdapter mAdapter;
+    public static TweetAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

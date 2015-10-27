@@ -16,6 +16,7 @@ import java.util.ArrayList;
  * Created by YHoP on 10/27/15.
  */
 public class TweetAdapter extends BaseAdapter {
+    
     private Context mContext;
     private ArrayList<Tweet> mTweets;
 
@@ -24,6 +25,9 @@ public class TweetAdapter extends BaseAdapter {
         mContext = context;
     }
 
+    public Context getContext() {
+        return mContext;
+    }
     @Override
     public int getCount() {
         return mTweets.size();
