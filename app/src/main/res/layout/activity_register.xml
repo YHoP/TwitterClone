@@ -16,13 +16,14 @@
         android:text="Please Register"
         android:id="@+id/registerLabel"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="24sp"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
         android:id="@+id/textPersonName"
         android:layout_below="@+id/registerLabel"
@@ -30,7 +31,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:hint="Name"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -41,5 +43,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="49dp"
         android:backgroundTint="@android:color/holo_green_light"
-        android:textColor="@android:color/white"/>
+        android:textColor="#ffffff"/>
 </RelativeLayout>
