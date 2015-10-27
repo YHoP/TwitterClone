@@ -1,12 +1,15 @@
 package com.epicodus.twitterclone.models;
+
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
+
 /**
  * Created by YHoP on 10/27/15.
  */
 @Table(name = "Users", id = "_id")
-class User extends Model {
+public class User extends Model {
 
     @Column(name = "Name")
     private String mName;
@@ -22,5 +25,13 @@ class User extends Model {
 
     public String getName() {
         return mName;
+    }
+
+
+    public static User find(String username) {
+        return new Select()
+                .from(User.class)
+                .where("Name = ?", username)
+                .executeSingle();
     }
 }
