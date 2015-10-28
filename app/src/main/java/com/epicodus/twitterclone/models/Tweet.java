@@ -84,4 +84,16 @@ public class Tweet extends Model {
     public List<Response> response(){
         return getMany(Response.class, "Tweet");
     }
+
+    public void parseHashTags(){
+    String[] words = mContent.split("\\s+");
+
+    for(String word : words){
+        if(word.startsWith("#")){
+            Tag tag = Tag.newTag(word);
+            TagTweet tagTweet = new TagTweet(tag, this);
+            tagTweet.save();
+        }
+    }
+}
 }

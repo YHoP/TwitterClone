@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class MainActivity extends ListActivity {
     private Button mSubmitButton;
     private ArrayList mTweets;
     public static TweetAdapter mAdapter;
+    private ImageView mSearchImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class MainActivity extends ListActivity {
         mTweetText = (EditText) findViewById(R.id.newTweetEdit);
         mSubmitButton = (Button) findViewById(R.id.tweetSubmitButton);
         mTweets = (ArrayList) Tweet.all();
+        mSearchImage = (ImageView) findViewById(R.id.searchButtonImage);
 
         mAdapter = new TweetAdapter(this, mTweets);
         setListAdapter(mAdapter);
@@ -56,6 +59,8 @@ public class MainActivity extends ListActivity {
                 String tweetContent = mTweetText.getText().toString();
                 Tweet tweet = new Tweet(tweetContent, mUser);
                 tweet.save();
+                tweet.parseHashTags();
+
                 mTweets.add(tweet);
                 mAdapter.notifyDataSetChanged();
                 mTweetText.getText().clear();
@@ -68,6 +73,15 @@ public class MainActivity extends ListActivity {
                 inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
                         InputMethodManager.HIDE_NOT_ALWAYS);
                 */
+
+            }
+        });
+
+        mSearchImage.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
 
             }
         });

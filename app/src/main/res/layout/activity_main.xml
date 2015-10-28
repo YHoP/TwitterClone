@@ -14,10 +14,9 @@
         android:layout_height="wrap_content"
         android:text="New Tweet"
         android:id="@+id/newTweetLabel"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="89dp"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/newTweetEdit"
+        android:layout_centerHorizontal="true"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -25,19 +24,21 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/newTweetEdit"
-        android:layout_alignTop="@+id/newTweetLabel"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"/>
+        android:layout_alignTop="@+id/tweetSubmitButton"
+        android:layout_toLeftOf="@+id/searchButtonImage"
+        android:layout_toRightOf="@+id/tweetSubmitButton"
+        android:layout_toEndOf="@+id/tweetSubmitButton"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tweet"
         android:id="@+id/tweetSubmitButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
-        android:backgroundTint="@android:color/holo_green_light"/>
+        android:backgroundTint="@android:color/holo_green_light"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
     <ListView
         android:layout_width="wrap_content"
@@ -47,4 +48,13 @@
         android:layout_above="@+id/newTweetLabel"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchButtonImage"
+        android:src="@android:drawable/ic_menu_search"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@android:id/list"
+        android:layout_alignEnd="@android:id/list"/>
 </RelativeLayout>
