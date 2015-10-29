@@ -49,8 +49,6 @@ public class SearchActivity extends ListActivity{
                 if (hashtag == null ){
                     Toast.makeText(SearchActivity.this, mSearchText.getText().toString() + " not found", Toast.LENGTH_LONG).show();
                     mSearchText.setText("");
-                    Intent intent = new Intent(SearchActivity.this, SearchActivity.class);
-                    startActivity(intent);
 
                 }else {
                     mTweets.clear();
