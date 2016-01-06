@@ -7,4 +7,7 @@
     <string name="formatted_time">EEEE, MMMM d \'at\' h:mm</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_tweet">TweetActivity</string>
+    <string name="username_error">UserName Error</string>
+    <string name="password_error">Password Error</string>
+    <string name="register_failed">Register Fail</string>
 </resources>
