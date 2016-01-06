@@ -8,5 +8,6 @@ public interface RegisterView {
 
     void startMainActivity();
 
-    void showLoginError(int resId);
+    void showRegisterError(int resId);
+
 }

@@ -64,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterView{
     }
 
     @Override
-    public void showLoginError(int resId) {
+    public void showRegisterError(int resId) {
         Toast.makeText(this, getString(resId), Toast.LENGTH_LONG).show();
     }
 }

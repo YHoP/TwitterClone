@@ -6,6 +6,7 @@ import com.epicodus.twitterclone.ui.RegisterView;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.mockito.Mockito.verify;
@@ -14,8 +15,11 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class RegisterPresenterTest {
 
+    @Mock
     private RegisterView view;
+    @Mock
     private RegisterService service;
+    @Mock
     private RegisterPresenter presenter;
 
     @Before
@@ -45,7 +49,7 @@ public class RegisterPresenterTest {
         when(view.getUsername()).thenReturn("john");
         presenter.onClicked();
 
-        verify(view).showLoginError(R.string.register_failed);
+        verify(view).showRegisterError(R.string.register_failed);
     }
 
 }

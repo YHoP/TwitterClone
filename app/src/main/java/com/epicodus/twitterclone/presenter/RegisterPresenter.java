@@ -27,6 +27,6 @@ public class RegisterPresenter {
             view.startMainActivity();
             return;
         }
-        view.showLoginError(R.string.register_failed);
+        view.showRegisterError(R.string.register_failed);
     }
 }
